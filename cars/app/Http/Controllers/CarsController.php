@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class CarsController extends Controller
 {
-//	TODO: tax output in all methods
     public function index() {
 		return Car::all();
 	}
@@ -30,6 +29,6 @@ class CarsController extends Controller
 	public function delete($id) {
 		$car = Car::findOrFail($id);
 		$car->delete();
-		return 204;
+		return response('', 204);
 	}
 }
